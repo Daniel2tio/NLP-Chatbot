@@ -21,9 +21,9 @@ if __name__ == '__main__':
     else:
         user_name = name_input(user_input)
         if user_name.lower() == 'daniel abreu':
-            print(">> Jarvis: Oh, u r my father! I love u! %s" %emotions())
+            print(">> Senku: Oh, u r my father! I love u! %s" %emotions())
         else:
-            print(">> Jarvis: Hi, %s, what do you want? %s" %(user_name, emotions()))
+            print(">> Senku: Hi, %s, what do you want? %s" %(user_name, emotions()))
 
     while(flag == True):
         print('>> %s: '%user_name, end=" ")
@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
             response = name_response(user_input, threshold = 0.9)
             if response != 'NOT FOUND':
-                print(">> Jarvis: I have a good memory. YOU ARE %s %s" %(user_name,emotions()))
+                print(">> Senku: I have a good memory. YOU ARE %s %s" %(user_name,emotions()))
                 continue
 
             #system time management
@@ -53,5 +53,5 @@ if __name__ == '__main__':
             #small talk management
             response = smalltalk_answers(user_input, threshold = 0.9)
             if response != 'NOT FOUND':
-                print(">> Jarvis: " + response + ' ' + emotions())
+                print(">> Senku: " + response + ' ' + emotions())
                 continue
