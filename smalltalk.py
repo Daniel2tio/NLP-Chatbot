@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import pairwise_distances
+import numpy as np
 
 
 #dataset of common small talk questions
@@ -23,4 +24,13 @@ def smalltalk_answers(query, threshold):
 
     # cosine similarity
     cos = 1 - pairwise_distances(df_tfidf, input_tfidf, metric = 'cosine')
+
+    if cos.max() >= threshold:
+        id_argmax = np.where(cos == np.max(cos, axis=0))
+        id = np.random.choice(id_argmax[0]) 
+        return df['Answer'].loc[id]
+    else:
+        return 'NOT FOUND'
     
+if __name__ == "__main__":
+    print(smalltalk_answers("What is up", 0.1))

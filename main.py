@@ -3,6 +3,7 @@ from features import emotions
 from names import name_input
 from Preprocessing import correct
 from names import name_response
+from smalltalk import smalltalk_answers
 
 if __name__ == '__main__':
     
@@ -37,4 +38,20 @@ if __name__ == '__main__':
             response = name_response(user_input, threshold = 0.9)
             if response != 'NOT FOUND':
                 print(">> Jarvis: I have a good memory. YOU ARE %s %s" %(user_name,emotions()))
+                continue
+
+            #system time management
+
+            if 'time' in user_input:
+                systemtime('time')
+                continue
+
+            if  'today' in user_input:
+                systemtime('today')
+                continue
+            
+            #small talk management
+            response = smalltalk_answers(user_input, threshold = 0.9)
+            if response != 'NOT FOUND':
+                print(">> Jarvis: " + response + ' ' + emotions())
                 continue
