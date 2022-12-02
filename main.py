@@ -63,4 +63,7 @@ if __name__ == '__main__':
                 print(">> Senku: " + response + ' ' + emotions())
             else:
                 print(">> Senku: I'm sorry. I don't know. Check Stack Overflow %s"%emotions())
-                continue
+
+        else:
+            flag = False
+        print(">> Senku: Bye! It was nice meeting you!")
