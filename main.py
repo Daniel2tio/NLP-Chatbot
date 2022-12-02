@@ -4,6 +4,7 @@ from names import name_input
 from Preprocessing import correct
 from names import name_response
 from smalltalk import smalltalk_answers
+from QnA import qna_response
 
 if __name__ == '__main__':
     
@@ -54,4 +55,12 @@ if __name__ == '__main__':
             response = smalltalk_answers(user_input, threshold = 0.9)
             if response != 'NOT FOUND':
                 print(">> Senku: " + response + ' ' + emotions())
+                continue
+
+            # small talk
+            response = qna_response(user_input, threshold = 0.1)
+            if response != 'NOT FOUND':
+                print(">> Senku: " + response + ' ' + emotions())
+            else:
+                print(">> Senku: I'm sorry. I don't know. Check Stack Overflow %s"%emotions())
                 continue
