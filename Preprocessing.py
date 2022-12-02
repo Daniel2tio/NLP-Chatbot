@@ -20,10 +20,10 @@ def lemmatisation(tokens):
     lemmer = nltk.stem.WordNetLemmatizer()
     newtokens = []
     posmap = {
-        'ADJ': 'J',
-        'ADV': 'R',
-        'NOUN': 'N',
-        'VERB': 'V'
+        'ADJ': 'a',
+        'ADV': 'r',
+        'NOUN': 'n',
+        'VERB': 'v'
     }
     #parts of speech tagging using the universal tagset
     post = nltk.pos_tag(tokens, tagset='universal') #parts of speech tagging using the universal tagset
@@ -31,7 +31,7 @@ def lemmatisation(tokens):
         word = token[0]
         tag = token[1]
         if tag in posmap.keys():
-            newtokens.append(lemmer.lemmatize(word.posmap[tag]))
+            newtokens.append(lemmer.lemmatize(word, posmap[tag]))
         else:
             newtokens.append(lemmer.lemmatize(word))
     return newtokens

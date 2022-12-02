@@ -6,6 +6,9 @@ from names import name_response
 from smalltalk import smalltalk_answers
 from QnA import qna_response
 
+import nltk
+nltk.download('omw-1.4')
+
 if __name__ == '__main__':
     
     #true until user says bye 
@@ -66,4 +69,4 @@ if __name__ == '__main__':
 
         else:
             flag = False
-        print(">> Senku: Bye! It was nice meeting you!")
+            print(">> Senku: Bye! It was nice meeting you!")

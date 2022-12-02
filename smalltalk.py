@@ -12,7 +12,7 @@ dataset = './Data/Small Talk.csv'
 
 def smalltalk_answers(query, threshold):
 
-    df = pd.read_csv(dataset)
+    df = pd.read_csv(dataset, encoding = "ISO-8859-1")
 
     #TF-IDF
     tfidf_vec = TfidfVectorizer(analyzer='word')

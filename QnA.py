@@ -7,7 +7,7 @@ import numpy as np
 
 #dataset containing general questions
 
-dataset = '/Data/QNA Dataset.csv'
+dataset = './Data/QNA_Dataset.csv'
 
 def qna_response(query, threshold):
 
