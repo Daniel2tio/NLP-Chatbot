@@ -57,7 +57,7 @@ if __name__ == '__main__':
                 print(">> Senku: " + response + ' ' + emotions())
                 continue
 
-            # small talk
+            # QNA management
             response = qna_response(user_input, threshold = 0.1)
             if response != 'NOT FOUND':
                 print(">> Senku: " + response + ' ' + emotions())

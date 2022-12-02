@@ -42,9 +42,8 @@ def text_tokenizer(text, type):
     text_tokens = word_tokenize(text)
     tokens = [word.lower() for word in text_tokens 
     if word not in stopwords.words('english') and word.isalpha()]
-
-   # tokens = lemmatisation(tokens) type == 'lemmatisation'
-   # return ('').join(tokens)
+    tokens = lemmatisation(tokens) if type == 'lemmatisation' else 0
+    return (' ').join(tokens)
 
 
 
