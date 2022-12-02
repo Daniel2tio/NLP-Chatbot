@@ -17,7 +17,7 @@ def smalltalk_answers(query, threshold):
     #TF-IDF
     tfidf_vec = TfidfVectorizer(analyzer='word')
     X_tfidf = tfidf_vec.fit_transform(df['Question']).toarray()
-    df_tfidf = pd.DataFrame(X_tfidf, columns = tfidf_vec.get_feature_names.out())
+    df_tfidf = pd.DataFrame(X_tfidf, columns = tfidf_vec.get_feature_names_out())
 
     # process query 
     input_tfidf = tfidf_vec.transform([query.lower()]).toarray()

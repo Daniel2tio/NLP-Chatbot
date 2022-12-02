@@ -17,7 +17,7 @@ def qna_response(query, threshold):
     # TF-IDF
     tfidf_vec = TfidfVectorizer(analyzer='word')
     X_tfidf = tfidf_vec.fit_transform(df['Question']).toarray()
-    df_tfidf = pd.DataFrame(X_tfidf, columns = tfidf_vec.get_feature_names.out())
+    df_tfidf = pd.DataFrame(X_tfidf, columns = tfidf_vec.get_feature_names_out())
 
     # Process the question and finds the answer in the dataset
     processed_query = text_tokenizer(query, 'lemmatisation')
