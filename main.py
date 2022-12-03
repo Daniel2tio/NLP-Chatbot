@@ -1,5 +1,6 @@
 from features import systemtime
 from features import emotions
+from features import calculate_age
 from names import name_input
 from Preprocessing import correct
 from names import name_response
@@ -52,6 +53,16 @@ if __name__ == '__main__':
 
             if  'today' in user_input:
                 systemtime('today')
+                continue
+
+            #age management
+
+            if 'how old' in user_input:
+                calculate_age('how old')
+                continue
+
+            if 'my age' in user_input:
+                calculate_age('my age')
                 continue
             
             #small talk management

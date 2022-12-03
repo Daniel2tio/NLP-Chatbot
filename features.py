@@ -19,3 +19,18 @@ def emotions():
 
     id = random.randint(0, len(emotions)-1)
     return emotions[id]
+
+def calculate_age(age_question):
+    if age_question == 'how old':
+        Year = int(input(" Please enter the year you were born "))
+        Month = int(input(" Please enter the number of the month you were born.  For example 3 = March "))
+        Day = int(input(" Please enter the day you were born "))
+
+        DOB = dt.datetime(Year,Month,Day)
+        Age = (dt.datetime.now() - DOB)
+        print("You are " + str(Age.days) + " days old")
+    
+        convertdays = int(Age.days)
+        AgeYears = convertdays/365
+
+        print("Or " + str(AgeYears) + " years old to be less precise!")
