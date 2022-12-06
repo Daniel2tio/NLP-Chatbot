@@ -16,7 +16,7 @@ if __name__ == '__main__':
     flag = True
 
     user_name = '(Unknown)'
-    print(">> Senku: I'm Senku. Yeah, you heard me right. I am the smartest human on earth...or bot? WTF!.")
+    print(">> Senku: I'm Senku. Yeah, you heard me right. I am the smartest human on earth...or bot?")
     print("           Please Enter 'bye' if you want to say good bye.")
     print("           May I have ur name? %s" %emotions())
     print('>> %s: ' %user_name, end=" ")
