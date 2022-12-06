@@ -31,6 +31,6 @@ def calculate_age(age_question):
         print("You are " + str(Age.days) + " days old")
     
         convertdays = int(Age.days)
-        AgeYears = convertdays/365
+        AgeYears = int(convertdays/365)
 
         print("Or " + str(AgeYears) + " years old to be less precise!")
