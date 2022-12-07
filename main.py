@@ -1,11 +1,13 @@
 from features import systemtime
 from features import emotions
 from features import calculate_age
+from features import rock_paper_scissors
 from names import name_input
 from Preprocessing import correct
 from names import name_response
 from smalltalk import smalltalk_answers
 from QnA import qna_response
+
 
 import nltk
 nltk.download('omw-1.4')
@@ -16,9 +18,9 @@ if __name__ == '__main__':
     flag = True
 
     user_name = '(Unknown)'
-    print(">> Senku: I'm Senku. Yeah, you heard me right. I am the smartest human on earth...or bot?")
-    print("           Please Enter 'bye' if you want to say good bye.")
-    print("           May I have ur name? %s" %emotions())
+    print(">> Senku: I'm Senku (づ￣ ³￣)づ I am the smartest human on earth...or bot?")
+    print(">> Please say 'bye' if you want to go ( ͡° ͜ʖ ͡°)")
+    print(">> May I have your name? %s" %emotions())
     print('>> %s: ' %user_name, end=" ")
     user_input = input()
     if user_input == 'bye':
@@ -64,7 +66,13 @@ if __name__ == '__main__':
             if 'my age' in user_input:
                 calculate_age('my age')
                 continue
-            
+
+            #rock paper scissors game
+
+            if 'rock paper scissors' in user_input:
+                rock_paper_scissors('rock paper scissors')
+                continue
+
             #small talk management
             response = smalltalk_answers(user_input, threshold = 0.9)
             if response != 'NOT FOUND':
@@ -76,8 +84,8 @@ if __name__ == '__main__':
             if response != 'NOT FOUND':
                 print(">> Senku: " + response + ' ' + emotions())
             else:
-                print(">> Senku: I'm sorry. I don't know. Check Stack Overflow %s"%emotions())
+                print(">> Senku: I'm sorry but I don't know what you're saying (• ε •). Check Google or ask something else! %s"%emotions())
 
         else:
             flag = False
-            print(">> Senku: Bye! It was nice meeting you!")
+            print(">> Senku: Bye bye! Until we meet again ༼ つ ಥ_ಥ ༽つ")
