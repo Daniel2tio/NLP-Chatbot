@@ -6,7 +6,7 @@ import numpy as np
 
 #dataset of common small talk questions
 
-dataset = './Data/Small Talk.csv'
+dataset = './Data/Small_Talk.csv'
 
 #function to repond with small talk answers based on user questions
 
