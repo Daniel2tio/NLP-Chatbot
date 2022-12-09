@@ -4,9 +4,22 @@ from nltk.corpus import stopwords
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import pairwise_distances
-naming = ["call", "myself", "rename", "name", "change", "my", "to", "switch"]
 
-def name_input(input):
+naming_change = ['change', 'call', 'rename', 'address me']
+naming = ["call", "me", "myself", "rename", "name", "change", "my", "name", "to", "switch"]
+
+
+#changing name
+
+def renaming_check(input):
+    text_tokens = word_tokenize(input)
+    if not set(text_tokens).isdisjoint(naming_change):
+        return True
+    else:
+        return False
+
+
+def rename(input):
     text_tokens = word_tokenize(input)
     user = [username for username in text_tokens 
     if not username.lower() in naming and username.isalpha 
@@ -14,6 +27,8 @@ def name_input(input):
     user = (' ').join(user)
 
     return user
+    
+
 
 #dataset of possible questions the user may ask to ask name
 

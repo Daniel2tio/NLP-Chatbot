@@ -3,7 +3,8 @@ from features import emotions
 from features import calculate_age
 from features import rock_paper_scissors
 from features import coinflip
-from names import name_input
+from names import rename
+from names import renaming_check
 from Preprocessing import correct
 from names import name_response
 from smalltalk import smalltalk_answers
@@ -27,11 +28,11 @@ if __name__ == '__main__':
     if user_input == 'bye':
         flag = False
     else:
-        user_name = name_input(user_input)
+        user_name = rename(user_input)
         if user_name.lower() == 'daniel abreu':
-            print(">> Senku: Oh, u r my father! I love u! %s" %emotions())
+            print(">> Senku: Oh, hello father! I love you! %s" %emotions())
         else:
-            print(">> Senku: Hi, %s, what do you want? %s" %(user_name, emotions()))
+            print(">> Senku: Hey, %s, how can I be of assistance? %s" %(user_name, emotions()))
 
     while(flag == True):
         print('>> %s: '%user_name, end=" ")
@@ -41,12 +42,6 @@ if __name__ == '__main__':
         user_input = (' ').join(user_input)
         if(user_input != 'bye'):
 
-            #name management memory
-
-            response = name_response(user_input, threshold = 0.9)
-            if response != 'NOT FOUND':
-                print(">> Senku: I have a good memory. YOU ARE %s %s" %(user_name,emotions()))
-                continue
 
             #system time management
 
@@ -57,6 +52,19 @@ if __name__ == '__main__':
             if  'today' in user_input:
                 systemtime('today')
                 continue
+
+            #name management memory
+
+            response = name_response(user_input, threshold = 0.9)
+            if response != 'NOT FOUND':
+                print(">> Senku: I believe your name is %s %s" %(user_name, emotions()))
+                continue
+
+            if renaming_check(user_input):
+                user_name = rename(user_input)
+                print(">> Senku: Hello different person, %s! %s" %(user_name, emotions()))
+                continue
+
 
             #age management
 
