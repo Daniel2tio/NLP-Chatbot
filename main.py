@@ -2,7 +2,6 @@ from features import systemtime
 from features import emotions
 from features import calculate_age
 from features import rock_paper_scissors
-from features import coinflip
 from names import rename
 from names import renaming_check
 from Preprocessing import correct
@@ -62,7 +61,7 @@ if __name__ == '__main__':
 
             if renaming_check(user_input):
                 user_name = rename(user_input)
-                print(">> Senku: Hello different person, %s! %s" %(user_name, emotions()))
+                print(">> Senku: Hello dear, %s! %s" %(user_name, emotions()))
                 continue
 
 
@@ -85,8 +84,6 @@ if __name__ == '__main__':
             if 'rock paper scissors' in user_input:
                 rock_paper_scissors('rock paper scissors')
                 continue
-
-            #flip a coin
 
 
             #small talk management
