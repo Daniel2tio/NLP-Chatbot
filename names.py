@@ -17,7 +17,7 @@ def name_input(input):
 
 #dataset of possible questions the user may ask to ask name
 
-dataset = './Data/Questions for naming script.csv'
+dataset = './Data/Naming_Dataset.csv'
 
 def name_response(query, threshold):
 

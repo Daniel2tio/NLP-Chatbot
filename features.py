@@ -7,7 +7,7 @@ def systemtime(time_question):
         seconds = date.strftime("%S")
         minutes = date.strftime("%M")
         hours = date.strftime("%H")
-        print(">> Senku: Would you like to know the time? It's %s:%s:%s now." % (seconds, minutes, hours))
+        print(">> Senku: Would you like to know the time? It's %s:%s:%s now." % (hours, minutes, seconds))
 
 def emotions():
     emotions = ['ヽ(@ u @)ノ ','ヽ(ˋ▽ˊ)ノ','°(°ˊoˋ°) ° ','┑(￣▽ ￣)┍ ','┑(￣u ￣)┍ ',
@@ -19,6 +19,11 @@ def emotions():
 
     id = random.randint(0, len(emotions)-1)
     return emotions[id]
+
+def coinflip(flip_question):
+
+    if flip_question == 'flip':
+        print("Testinggggggggggg")
 
 def calculate_age(age_question):
     if age_question == 'how old am i' or "my age":
@@ -93,4 +98,14 @@ def rock_paper_scissors(rps_question):
         else:
             print(">> Senku: No worries, I'll always be down for another game when you feel like it!")
             break
+
+        """
+        flip = random.choice["Heads","Tails"]
+        user_flip = str(input(">> Senku:Would you like heads or tails?"))
+        flip = random.choice["Heads","Tails"]
+        if user_flip not in flip:
+            print(">> Senku: That's not a valid option")
+        else:
+            print(f">> Senku: You got {flip}!")
+"""
         

@@ -2,6 +2,7 @@ from features import systemtime
 from features import emotions
 from features import calculate_age
 from features import rock_paper_scissors
+from features import coinflip
 from names import name_input
 from Preprocessing import correct
 from names import name_response
@@ -66,12 +67,19 @@ if __name__ == '__main__':
             if 'my age' in user_input:
                 calculate_age('my age')
                 continue
-
+            
+            if 'hippopotamus' in user_input:
+                calculate_age('hippopotamus')
+                continue 
+            
             #rock paper scissors game
 
             if 'rock paper scissors' in user_input:
                 rock_paper_scissors('rock paper scissors')
                 continue
+
+            #flip a coin
+
 
             #small talk management
             response = smalltalk_answers(user_input, threshold = 0.9)
