@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import pairwise_distances
 
 naming_change = ['change', 'call', 'rename', 'address me']
-naming = ["call", "me", "myself", "rename", "name", "change", "my", "name", "to", "switch"]
+naming = ["call", "me", "myself", "rename", "name", "change", "my", "to", "switch"]
 
 
 #changing name
